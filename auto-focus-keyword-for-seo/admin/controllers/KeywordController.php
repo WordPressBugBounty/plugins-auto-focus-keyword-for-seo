@@ -104,7 +104,7 @@ class KeywordController
             wp_die();
         }
     
-        $result = add_post_meta($post_id, $this->meta_key(), $post_title, true);
+        $result = update_post_meta($post_id, $this->meta_key(), $post_title, true);
     
         if ($result) {
             // Get the existing options array
