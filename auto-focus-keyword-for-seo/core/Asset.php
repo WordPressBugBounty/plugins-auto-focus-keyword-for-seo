@@ -1,6 +1,6 @@
 <?php
 namespace Pagup\AutoFocusKeyword\Core;
-use Pagup\AutoFocusKeyword\Core\Plugin;
+use \Pagup\AutoFocusKeyword\Core\Plugin;
 
 class Asset 
 {

@@ -4,7 +4,7 @@
 * Plugin Name: Auto Focus Keyword for SEO
 * Description: This plugin will assign Focus Keywords to all your pages (on the backend) based on post titles, for websites using Yoast SEO and Rank Math.
 * Author: Pagup
-* Version: 1.0.3
+* Version: 1.0.4
 * Author URI: https://pagup.com/
 * Text Domain: auto-focus-keyword-for-seo
 * Domain Path: /languages/

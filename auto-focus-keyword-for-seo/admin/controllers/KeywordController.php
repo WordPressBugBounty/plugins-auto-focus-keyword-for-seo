@@ -1,7 +1,7 @@
 <?php
 namespace Pagup\AutoFocusKeyword\Controllers;
 
-use Pagup\AutoFocusKeyword\Traits\Helpers;
+use \Pagup\AutoFocusKeyword\Traits\Helpers;
 
 class KeywordController
 {

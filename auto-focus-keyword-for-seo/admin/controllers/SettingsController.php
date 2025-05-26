@@ -2,10 +2,10 @@
 
 namespace Pagup\AutoFocusKeyword\Controllers;
 
-use Pagup\AutoFocusKeyword\Core\Option;
-use Pagup\AutoFocusKeyword\Core\Plugin;
-use Pagup\AutoFocusKeyword\Core\Request;
-use Pagup\AutoFocusKeyword\Traits\Helpers;
+use \Pagup\AutoFocusKeyword\Core\Option;
+use \Pagup\AutoFocusKeyword\Core\Plugin;
+use \Pagup\AutoFocusKeyword\Core\Request;
+use \Pagup\AutoFocusKeyword\Traits\Helpers;
 
 class SettingsController 
 {
