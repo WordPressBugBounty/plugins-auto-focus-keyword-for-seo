@@ -1,0 +1,611 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Auto Focus Keyword for SEO 1.0.5\n"
+"Report-Msgid-Bugs-To: info@pagup.com\n"
+"POT-Creation-Date: 2026-06-22 23:09-0400\n"
+"PO-Revision-Date: 2026-06-23 00:00-0400\n"
+"Last-Translator: Pagup <info@pagup.com>\n"
+"Language-Team: de_DE\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin/controllers/SettingsController.php:19
+#: admin/controllers/SettingsController.php:20
+#: premium/auto-focus-keyword-for-seo-premium/admin/controllers/SettingsController.php:19
+#: premium/auto-focus-keyword-for-seo-premium/admin/controllers/SettingsController.php:20
+msgid "Auto Focus Keyword"
+msgstr "Automatisches Fokus-Keyword"
+
+#: admin/controllers/SettingsController.php:53
+#: premium/auto-focus-keyword-for-seo-premium/admin/controllers/SettingsController.php:53
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+#: admin/controllers/SettingsController.php:61
+#: premium/auto-focus-keyword-for-seo-premium/admin/controllers/SettingsController.php:61
+#, php-format
+msgid "<a href=\"%s\">Get Pro version</a> to enable"
+msgstr "<a href=\"%s\">Pro-Version holen</a>, um diese Option zu aktivieren"
+
+#: admin/views/faq.view.php:14
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:14
+msgid "What is a \"Focus Keyword\" according to Yoast and Rank Math plugin"
+msgstr "Was ist ein \"Fokus-Keyword\" laut Yoast und Rank Math?"
+
+#: admin/views/faq.view.php:16
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:16
+msgid ""
+"The \"Focus Keyword\" feature of Yoast SEO and Rank Math is a dynamic "
+"backend tool that allows the optimization of a page based on a central "
+"query, with the aim of maximizing its understanding by search engines and "
+"generating consistent SEO. This \"Focus Keyword\" will also be deployed as a "
+"\"Meta Tag keyword\" on the frontend, in the HTML code of your website."
+msgstr ""
+"Die Funktion \"Fokus-Keyword\" von Yoast SEO und Rank Math ist ein "
+"dynamisches Administrationswerkzeug, mit dem eine Seite rund um eine "
+"zentrale Suchanfrage optimiert werden kann. Ziel ist es, das Verständnis "
+"durch Suchmaschinen zu verbessern und eine konsistente SEO-Optimierung zu "
+"erzeugen. Dieses \"Fokus-Keyword\" wird außerdem als \"Meta Tag Keyword\" im "
+"Frontend im HTML-Code deiner Website ausgegeben."
+
+#: admin/views/faq.view.php:18
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:18
+msgid ""
+"The \"Focus Keyword\" feature (or \"Primary Keyword\") allows users to "
+"specify a target keyword or phrase for each article or page of their "
+"website. The goal is to optimize the content around this keyword to improve "
+"the chances of ranking in search engines for that specific query."
+msgstr ""
+"Die Funktion \"Fokus-Keyword\" oder \"Primary Keyword\" ermöglicht es "
+"Benutzern, für jeden Beitrag oder jede Seite der Website ein Ziel-Keyword "
+"oder eine Zielphrase festzulegen. Ziel ist es, den Inhalt rund um dieses "
+"Keyword zu optimieren und die Chancen auf Rankings für diese konkrete "
+"Suchanfrage zu erhöhen."
+
+#: admin/views/faq.view.php:20
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:20
+msgid ""
+"By using the \"Focus Keyword\" feature of Yoast SEO or Rank Math, you can "
+"refine your content to align with the best SEO practices and increase your "
+"chances of being well-ranked in search engine results for your target "
+"keyword."
+msgstr ""
+"Mit der Funktion \"Fokus-Keyword\" von Yoast SEO oder Rank Math kannst du "
+"deine Inhalte an SEO-Best-Practices ausrichten und deine Chancen verbessern, "
+"für dein Ziel-Keyword gut in den Suchergebnissen platziert zu werden."
+
+#: admin/views/faq.view.php:26
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:26
+msgid "What is a META Tag Keyword?"
+msgstr "Was ist ein META-Keyword-Tag?"
+
+#: admin/views/faq.view.php:28
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:28
+msgid ""
+"A meta tag keyword is a type of meta tag that is used to indicate the "
+"primary keywords or phrases relevant to the content of a web page. It is "
+"included in the HTML code of a webpage and provides information to search "
+"engines about the page's content."
+msgstr ""
+"Ein Meta-Keyword-Tag ist eine Art Meta-Tag, mit dem die wichtigsten Keywords "
+"oder Phrasen zum Inhalt einer Webseite angegeben werden. Er wird im HTML-"
+"Code einer Seite eingefügt und liefert Suchmaschinen Informationen über den "
+"Seiteninhalt."
+
+#: admin/views/faq.view.php:34
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:34
+msgid "Why is this plugin useful for SEO"
+msgstr "Warum ist dieses Plugin für SEO nützlich?"
+
+#: admin/views/faq.view.php:36
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:36
+msgid ""
+"This plugin serves as a \"lever\" that allows the use of other automated "
+"optimization features (SEO plugins) such as \"Bialty\" a plugin that "
+"optimizes Alt text based on the \"Focus Keywords,\" \"Bigta\" which "
+"optimizes Title text based on the \"Focus Keywords,\" and finally, \"Auto-"
+"Links for SEO\" that enables automated internal linking using the Focus "
+"Keywords."
+msgstr ""
+"Dieses Plugin dient als \"Hebel\", mit dem weitere automatisierte "
+"Optimierungsfunktionen genutzt werden können: zum Beispiel \"Bialty\" für "
+"optimierte Alt-Texte auf Basis von Fokus-Keywords, \"Bigta\" für Title-"
+"Attribute auf Basis von Fokus-Keywords und \"Auto-Links for SEO\" für "
+"automatisch erzeugte interne Links mit diesen Fokus-Keywords."
+
+#: admin/views/faq.view.php:38
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:38
+msgid ""
+"This plugin is not intended to fully replace the manual work of integrating "
+"Focus Keywords into each of your pages (and thus optimizing them for search "
+"engines), but rather to provide an efficiency lever for all your pages, even "
+"those that may be less important to you, in the eyes of search engines."
+msgstr ""
+"Dieses Plugin soll die manuelle Integration von Fokus-Keywords in jede Seite "
+"nicht vollständig ersetzen. Es soll vielmehr einen Effizienzhebel für alle "
+"Seiten bieten, auch für solche, die für dich weniger wichtig sind."
+
+#: admin/views/faq.view.php:40
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:40
+msgid ""
+"Finally, in the context where your site has a VERY large number of pages (or "
+"products), this plugin can save you a considerable amount of time in "
+"optimizing its SEO."
+msgstr ""
+"Wenn deine Website sehr viele Seiten oder Produkte enthält, kann dieses "
+"Plugin bei der SEO-Optimierung erheblich Zeit sparen."
+
+#: admin/views/faq.view.php:46
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:46
+msgid ""
+"Is it good for SEO to use Post titles as META tag keywords (Focus Keyword) ?"
+msgstr ""
+"Ist es für SEO sinnvoll, Beitragstitel als META-Keywords oder Fokus-Keywords "
+"zu verwenden?"
+
+#: admin/views/faq.view.php:48
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:48
+msgid ""
+"Ideally, the most effective practice would be to use clearly defined "
+"keywords (whether they are head keywords or semantic keywords). However, if "
+"your titles are short and focused on the theme of the page, using this "
+"plugin will save you considerable time, especially by identifying, through "
+"the color-coded \"dots\" of Yoast SEO (red, orange, green), which pages "
+"require your attention. It also helps in deploying coherent Alt tags with "
+"the Bialty plugin and, most importantly, automatically creating internal "
+"linking with the Auto-Link for SEO plugin."
+msgstr ""
+"Idealerweise werden klar definierte Keywords verwendet, egal ob "
+"Hauptkeywords oder semantische Keywords. Wenn deine Titel jedoch kurz und "
+"auf das Seitenthema ausgerichtet sind, spart dieses Plugin viel Zeit, "
+"insbesondere weil es über die farbigen Yoast-SEO-Punkte in Rot, Orange oder "
+"Grün zeigt, welche Seiten Aufmerksamkeit benötigen. Außerdem hilft es beim "
+"Ausrollen konsistenter Alt-Tags mit Bialty und vor allem beim automatischen "
+"Aufbau interner Links mit Auto-Link for SEO."
+
+#: admin/views/faq.view.php:50
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:50
+msgid ""
+"In fact, the benefit of using this plugin and the META tag keywords it "
+"generates for SEO is more correlated with the complementarity of other "
+"features it enables. It is the combined use of these plugins that will have "
+"a real impact on your SEO!"
+msgstr ""
+"Der Nutzen dieses Plugins und der für SEO erzeugten META-Keywords hängt vor "
+"allem mit den ergänzenden Funktionen zusammen, die es ermöglicht. Erst die "
+"kombinierte Nutzung dieser Plugins hat einen echten Einfluss auf dein SEO."
+
+#: admin/views/faq.view.php:56
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:56
+msgid "What happens If I uninstall this plugin ?"
+msgstr "Was passiert, wenn ich dieses Plugin deinstalliere?"
+
+#: admin/views/faq.view.php:58
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:58
+msgid ""
+"The focus keyword values are saved inside the database in the post meta "
+"table. So they will not be automatically removed if you deactivate or "
+"uninstall the plugin. But if you want to get rid of focus keywords created "
+"by \"Auto Focus Keyword for SEO\" plugin then there is an easy way. You can "
+"go to the <b>Sync logs</b> page from the menu on the Settings page, select "
+"all or the post you want to remove, and then delete them. If the focus "
+"keyword is not modified (same as the post title) then it will be "
+"automatically removed. Once all logs are deleted, you can uninstall the "
+"plugin."
+msgstr ""
+"Die Werte der Fokus-Keywords werden in der Post-Meta-Tabelle der Datenbank "
+"gespeichert. Sie werden daher nicht automatisch entfernt, wenn du das Plugin "
+"deaktivierst oder deinstallierst. Wenn du die von \"Auto Focus Keyword for "
+"SEO\" erzeugten Fokus-Keywords entfernen möchtest, gibt es einen einfachen "
+"Weg: Öffne über die Einstellungsseite die <b>Synchronisierungsprotokolle</"
+"b>, wähle alle oder die gewünschten Beiträge aus und lösche sie. Wenn das "
+"Fokus-Keyword nicht geändert wurde und noch dem Beitragstitel entspricht, "
+"wird es automatisch entfernt. Sobald alle Protokolle gelöscht sind, kannst "
+"du das Plugin deinstallieren."
+
+#: admin/views/inc/notice.view.php:4
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/notice.view.php:4
+msgid ""
+"It seems Yoast SEO or Rank Math SEO are not activated. You need one of them "
+"for this plugin to work properly."
+msgstr ""
+"Yoast SEO oder Rank Math SEO scheint nicht aktiviert zu sein. Eines davon "
+"wird benötigt, damit dieses Plugin korrekt funktioniert."
+
+#: admin/views/inc/side.view.php:5
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:5
+msgid "STEP 3: NOW THAT YOU HAVE FOCUS KEYWORDS EVERYWHERE ..."
+msgstr "SCHRITT 3: JETZT, DA DU ÜBERALL FOKUS-KEYWORDS HAST..."
+
+#: admin/views/inc/side.view.php:7
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:7
+msgid ""
+"Once all your focus keywords are added everywhere properly, you can now "
+"optimize your SEO using 3 SEO plugins (made by Pagup.com) designed to "
+"\"Work\" with these Focus Keywords."
+msgstr ""
+"Sobald alle Fokus-Keywords überall korrekt hinzugefügt wurden, kannst du "
+"dein SEO mit 3 SEO-Plugins von Pagup.com optimieren, die für die Arbeit mit "
+"diesen Fokus-Keywords entwickelt wurden."
+
+#: admin/views/inc/side.view.php:10
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:10
+msgid ""
+"BIALTY : a plugin using Focus Keywords to deploy automatically optimized Alt "
+"text everywhere."
+msgstr ""
+"BIALTY: ein Plugin, das Fokus-Keywords verwendet, um automatisch optimierte "
+"Alt-Texte überall auszurollen."
+
+#: admin/views/inc/side.view.php:12
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:12
+msgid ""
+"BIGTA:  a plugin using Focus keywords to deploy automatically Title tags "
+"everywhere."
+msgstr ""
+"BIGTA: ein Plugin, das Fokus-Keywords verwendet, um automatisch Title-Tags "
+"überall auszurollen."
+
+#: admin/views/inc/side.view.php:14
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:14
+msgid ""
+"AUTO-LINKS FOR SEO: a plugin deploying automatically internal links based on "
+"Focus Keywords."
+msgstr ""
+"AUTO-LINKS FOR SEO: ein Plugin, das automatisch interne Links auf Basis von "
+"Fokus-Keywords erstellt."
+
+#: admin/views/inc/side.view.php:20
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:20
+msgid "AUTO Alt text from Focus keywords"
+msgstr "Automatischer Alt-Text aus Fokus-Keywords"
+
+#: admin/views/inc/side.view.php:22
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:22
+msgid ""
+"Auto optimize all image alt texts (including Woocommerce online store), of "
+"your pages, posts &amp; products, from Yoast SEO optimization settings "
+"(keywords) and/or Post title."
+msgstr ""
+"Optimiere automatisch alle Bild-Alt-Texte, auch in WooCommerce-Shops, für "
+"Seiten, Beiträge und Produkte aus Yoast-SEO-Optimierungseinstellungen, "
+"Keywords und/oder Beitragstiteln."
+
+#: admin/views/inc/side.view.php:24
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:24
+msgid "Get BIALTY by Pagup »"
+msgstr "BIALTY von Pagup holen »"
+
+#: admin/views/inc/side.view.php:28
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:28
+msgid "AUTO Title text from Focus Keywords"
+msgstr "Automatischer Title-Text aus Fokus-Keywords"
+
+#: admin/views/inc/side.view.php:30
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:30
+msgid ""
+"Auto optimize all image title texts (including Woocommerce online store), of "
+"your pages, posts &amp; products, with Yoast SEO focus keywords, Post title, "
+"Image name, website title etc."
+msgstr ""
+"Optimiere automatisch alle Bild-Title-Texte, auch in WooCommerce-Shops, für "
+"Seiten, Beiträge und Produkte mit Yoast-SEO-Fokus-Keywords, Beitragstitel, "
+"Bildname, Website-Titel usw."
+
+#: admin/views/inc/side.view.php:32
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:32
+msgid "Get BIGTA by Pagup »"
+msgstr "BIGTA von Pagup holen »"
+
+#: admin/views/inc/side.view.php:36
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:36
+msgid "AUTO Internal links from Focus Keywords"
+msgstr "Automatische interne Links aus Fokus-Keywords"
+
+#: admin/views/inc/side.view.php:38
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:38
+msgid ""
+"Auto optimize your website internal links structure by using Yoast SEO (or "
+"Rank Math) focus keywords. Sync focus keywords from selected post types, "
+"which will be auto linked on other posts based on where that keyword will "
+"appear."
+msgstr ""
+"Optimiere automatisch die interne Linkstruktur deiner Website mit Fokus-"
+"Keywords aus Yoast SEO oder Rank Math. Synchronisiere Fokus-Keywords aus "
+"ausgewählten Beitragstypen, die in anderen Beiträgen automatisch verlinkt "
+"werden, wenn das Keyword dort vorkommt."
+
+#: admin/views/inc/side.view.php:40
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/side.view.php:40
+msgid "Get Auto Links by Pagup »"
+msgstr "Auto Links von Pagup holen »"
+
+#: admin/views/inc/sync.view.php:5
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:5
+msgid "STEP 2: Sync"
+msgstr "SCHRITT 2: Synchronisieren"
+
+#: admin/views/inc/sync.view.php:7
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:7
+msgid ""
+"Before adding your Focus Keywords, you should allow the plugin to identify "
+"where they are located. A quick “Fetch Items” and ... you're ready to “Sync”"
+msgstr ""
+"Bevor du deine Fokus-Keywords hinzufügst, muss das Plugin erkennen dürfen, "
+"wo sie sich befinden. Ein kurzer Klick auf \"Elemente abrufen\" und du bist "
+"bereit für \"Synchronisieren\"."
+
+#: admin/views/inc/sync.view.php:14
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:14
+msgid ""
+"published items found without focus keyword(s). Click \"Fetch Items\" button "
+"to get ready for Sync."
+msgstr ""
+"veröffentlichte Elemente ohne Fokus-Keyword gefunden. Klicke auf \"Elemente "
+"abrufen\", um die Synchronisierung vorzubereiten."
+
+#: admin/views/inc/sync.view.php:18
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:18
+msgid "Fetching..."
+msgstr "Wird abgerufen..."
+
+#: admin/views/inc/sync.view.php:18
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:18
+msgid "Fetch Items"
+msgstr "Elemente abrufen"
+
+#: admin/views/inc/sync.view.php:22
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:22
+msgid "Last Synced:"
+msgstr "Zuletzt synchronisiert:"
+
+#: admin/views/inc/sync.view.php:32
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:32
+msgid "Do not close or move from this page. Progress will be cancelled."
+msgstr ""
+"Schließe oder verlasse diese Seite nicht. Der Fortschritt wird sonst "
+"abgebrochen."
+
+#: admin/views/inc/sync.view.php:37
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:37
+msgid "Great. You've"
+msgstr "Gut. Du hast"
+
+#: admin/views/inc/sync.view.php:37
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:37
+msgid ""
+"items in the waiting list below. Modify list (by deleting posts you don't "
+"want to sync) and hit that <strong>SYNC NOW</strong> button."
+msgstr ""
+"Elemente in der folgenden Warteliste. Passe die Liste an, indem du Beiträge "
+"löschst, die nicht synchronisiert werden sollen, und klicke dann auf "
+"<strong>JETZT SYNCHRONISIEREN</strong>."
+
+#: admin/views/inc/sync.view.php:40
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:40
+msgid "Waiting List"
+msgstr "Warteliste"
+
+#: admin/views/inc/sync.view.php:51
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:51
+msgid "Processing..."
+msgstr "Verarbeitung..."
+
+#: admin/views/inc/sync.view.php:51
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:51
+msgid "Sync Now"
+msgstr "Jetzt synchronisieren"
+
+#: admin/views/inc/sync.view.php:67
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:67
+msgid "[Failed!!!] "
+msgstr "[Fehlgeschlagen] "
+
+#: admin/views/inc/sync.view.php:81
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:81
+msgid "Great. You've no items without focus keyword(s)."
+msgstr "Gut. Du hast keine Elemente ohne Fokus-Keyword."
+
+#: admin/views/logs.view.php:9
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:9
+msgid "No logs available."
+msgstr "Keine Protokolle verfügbar."
+
+#: admin/views/logs.view.php:14
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:14
+msgid ""
+"Note: Deleting an item from sync logs will remove the focus keyword value as "
+"well (if it's not modified) and it will be available to sync again. If you "
+"modify the focus keyword in any way after sync, then the focus keyword value "
+"won't be removed. The delete button will simply remove the log entry without "
+"affecting your custom focus keyword value. If you don't want to add the "
+"focus keyword for a post then make sure to add it to the blacklist on the "
+"Settings tab."
+msgstr ""
+"Hinweis: Wenn ein Element aus den Synchronisierungsprotokollen gelöscht "
+"wird, wird auch der Fokus-Keyword-Wert entfernt, sofern er nicht geändert "
+"wurde, und das Element kann erneut synchronisiert werden. Wenn du das Fokus-"
+"Keyword nach der Synchronisierung änderst, wird der Wert nicht entfernt. Die "
+"Schaltfläche Löschen entfernt nur den Protokolleintrag, ohne dein eigenes "
+"Fokus-Keyword zu ändern. Wenn du für einen Beitrag kein Fokus-Keyword "
+"hinzufügen möchtest, füge ihn in den Einstellungen zur Blacklist hinzu."
+
+#: admin/views/logs.view.php:19
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:19
+msgid "Sync Logs"
+msgstr "Synchronisierungsprotokolle"
+
+#: admin/views/logs.view.php:23
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:23
+msgid "Total number of keywords synced:"
+msgstr "Gesamtzahl synchronisierter Keywords:"
+
+#: admin/views/logs.view.php:50
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:50
+msgid "Delete Selected Items"
+msgstr "Ausgewählte Elemente löschen"
+
+#: admin/views/logs.view.php:54
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:54
+msgid "Stop Deleting Progress"
+msgstr "Löschvorgang stoppen"
+
+#: admin/views/logs.view.php:60
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:60
+msgid "Search"
+msgstr "Suchen"
+
+#: admin/views/logs.view.php:71
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:71
+msgid "created at "
+msgstr "erstellt am "
+
+#: admin/views/logs.view.php:72
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:72
+msgid "updated at "
+msgstr "aktualisiert am "
+
+#: admin/views/logs.view.php:74
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/logs.view.php:74
+msgid "Delete"
+msgstr "Löschen"
+
+#: admin/views/metabox.view.php:10
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/metabox.view.php:10
+msgid "Checking this box will disable auto focus keyword for this page."
+msgstr ""
+"Aktiviere dieses Kontrollkästchen, um das automatische Fokus-Keyword für "
+"diese Seite zu deaktivieren."
+
+#: admin/views/settings.view.php:24
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:14
+msgid "About Auto Focus Keyword for SEO"
+msgstr "Über Auto Focus Keyword for SEO"
+
+#: admin/views/settings.view.php:27
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:15
+msgid ""
+"The Automatic Focus keyword for SEO plugin will add automatically \"focus "
+"keywords\" on the backend (first, then on frontend, once saved), for "
+"websites using Yoast SEO or Rank math plugins, to all your pages, based on "
+"post titles (used for each of these pages) so that you can optimize your "
+"content using their dynamic live settings (meta title, meta description, "
+"slug, alt tags, ...) for SEO. Please refer to the FAQ section to learn about "
+"all these terms (Focus Keyword, Meta tag Keyword, etc.). Once done, you will "
+"be able to use several other plugins made by Pagup.com to automatically "
+"optimize Alt tags, Title tags, Internal links and more ... (as these plugins "
+"are based on these Focus keywords). Enjoy !"
+msgstr ""
+"Das Plugin Automatic Focus Keyword for SEO fügt automatisch \"Fokus-"
+"Keywords\" im Backend hinzu, zunächst dort und nach dem Speichern auch im "
+"Frontend, für Websites mit Yoast SEO oder Rank Math und für alle Seiten auf "
+"Basis der Beitragstitel. So kannst du deine Inhalte mit dynamischen "
+"Einstellungen wie Meta-Titel, Meta-Beschreibung, Slug, Alt-Tags und mehr "
+"optimieren. In der FAQ findest du Erklärungen zu Fokus-Keyword, Meta-Keyword-"
+"Tag usw. Danach kannst du weitere Plugins von Pagup.com verwenden, um Alt-"
+"Tags, Title-Tags, interne Links und mehr automatisch zu optimieren, weil "
+"diese Plugins auf Fokus-Keywords basieren. Viel Erfolg!"
+
+#: admin/views/settings.view.php:31
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:17
+msgid ""
+"PS: we strongly recommend that you do not use Yoast SEO and Rank Math "
+"plugins altogether (for compatibility matters)."
+msgstr ""
+"PS: Wir empfehlen dringend, Yoast SEO und Rank Math aus "
+"Kompatibilitätsgründen nicht gleichzeitig zu verwenden."
+
+#: admin/views/settings.view.php:56
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:38
+msgid "Post Types"
+msgstr "Beitragstypen"
+
+#: admin/views/settings.view.php:61
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:41
+msgid ""
+"Please select which custom post types should be targeted by this process"
+msgstr ""
+"Bitte wähle aus, welche benutzerdefinierten Beitragstypen durch diesen "
+"Prozess erfasst werden sollen"
+
+#: admin/views/settings.view.php:110
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:66
+#, php-format
+msgid "<a href=\"%s\">Get Pro version</a> to enable Woocommerce Products"
+msgstr ""
+"<a href=\"%s\">Pro-Version holen</a>, um WooCommerce-Produkte zu aktivieren"
+
+#: admin/views/settings.view.php:130
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:77
+msgid "Black List Post(s)"
+msgstr "Blacklist für Beiträge"
+
+#: admin/views/settings.view.php:134
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:79
+msgid "Select Post(s) where you don't want to automatically add focus keyword."
+msgstr ""
+"Wähle Beiträge aus, für die kein Fokus-Keyword automatisch hinzugefügt "
+"werden soll."
+
+#: admin/views/settings.view.php:158
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:101
+msgid "Auto Focus Keyword Continuously"
+msgstr "Fokus-Keyword fortlaufend automatisch setzen"
+
+#: admin/views/settings.view.php:164
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:103
+msgid "100% Automatic - No more manual action required."
+msgstr "100% automatisch: keine manuelle Aktion mehr erforderlich."
+
+#: admin/views/settings.view.php:173
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:110
+msgid "Disable Auto Focus Keyword on Post Create/Update"
+msgstr ""
+"Automatisches Fokus-Keyword beim Erstellen oder Aktualisieren von Beiträgen "
+"deaktivieren"
+
+#: admin/views/settings.view.php:177
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:112
+msgid ""
+"This option will disable auto sync. Creating or updating post (or any other "
+"post type selected above) will not create focus keyword automatically."
+msgstr ""
+"Diese Option deaktiviert die automatische Synchronisierung. Beim Erstellen "
+"oder Aktualisieren eines Beitrags oder eines anderen oben ausgewählten "
+"Beitragstyps wird kein Fokus-Keyword automatisch erstellt."
+
+#: admin/views/settings.view.php:190
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:126
+#, php-format
+msgid "<a href=\"%s\">Get Pro version</a> to enable Continuous Sync feature"
+msgstr ""
+"<a href=\"%s\">Pro-Version holen</a>, um die fortlaufende Synchronisierung "
+"zu aktivieren"
+
+#: admin/views/settings.view.php:210
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:138
+msgid "Remove Settings"
+msgstr "Einstellungen entfernen"
+
+#: admin/views/settings.view.php:228
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:152
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: auto-focus-keyword-for-seo.php:83
+#: premium/auto-focus-keyword-for-seo-premium/auto-focus-keyword-for-seo.php:84
+#, php-format
+msgid ""
+"Hey %1$s, %2$s Click on Allow & Continue to optimize your Focus keywords "
+"everywhere. %2$s Never miss an important update -- opt-in to our security "
+"and feature updates notifications. %2$s See you on the other side. Thanks"
+msgstr ""
+"Hallo %1$s, %2$s klicke auf Zulassen und fortfahren, um deine Fokus-Keywords "
+"überall zu optimieren. %2$s Verpasse keine wichtigen Updates: aktiviere "
+"Benachrichtigungen zu Sicherheit und neuen Funktionen. %2$s Bis bald. Danke"
+
+#: premium/auto-focus-keyword-for-seo-premium/admin/controllers/MetaboxController.php:21
+msgid "Automatic Focus Keyword"
+msgstr "Automatisches Fokus-Keyword"
