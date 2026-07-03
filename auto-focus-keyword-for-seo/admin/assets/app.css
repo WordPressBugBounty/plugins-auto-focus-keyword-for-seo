@@ -524,6 +524,82 @@ ul.afkw-log li ul {
   box-shadow: var(--afkw-shadow);
 }
 
+.afkw-coverage {
+  background-color: var(--afkw-gray);
+  box-shadow: var(--afkw-shadow);
+  margin: 20px 0;
+  padding: 16px;
+}
+
+.afkw-coverage-header {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.afkw-coverage-header h3 {
+  font-size: 16px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.afkw-coverage-header span {
+  background-color: #fff;
+  color: #333;
+  font-weight: 700;
+  padding: 4px 8px;
+}
+
+.afkw-coverage-bar {
+  background-color: #fff;
+  height: 12px;
+  overflow: hidden;
+}
+
+.afkw-coverage-bar span {
+  background-color: var(--afkw-color1);
+  display: block;
+  height: 100%;
+  transition: width 0.3s ease-out;
+}
+
+.afkw-coverage-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.afkw-coverage-grid div {
+  background-color: #fff;
+  padding: 12px;
+}
+
+.afkw-coverage-grid strong,
+.afkw-coverage-grid span {
+  display: block;
+}
+
+.afkw-coverage-grid strong {
+  color: var(--afkw-color1-hov);
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.afkw-coverage-grid span {
+  color: #333;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 782px) {
+  .afkw-coverage-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*****************************************
                 LOGS
 *****************************************/

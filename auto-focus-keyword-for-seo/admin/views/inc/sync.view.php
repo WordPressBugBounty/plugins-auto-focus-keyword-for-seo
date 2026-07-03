@@ -6,6 +6,34 @@
 
     <p><?php echo esc_html__("Before adding your Focus Keywords, you should allow the plugin to identify where they are located. A quick “Fetch Items” and ... you're ready to “Sync”", "auto-focus-keyword-for-seo"); ?></p>
 
+    <div v-if="focusKeywordCoverage.supported" class="afkw-coverage" aria-live="polite">
+        <div class="afkw-coverage-header">
+            <h3><?php echo esc_html__("Focus keyword coverage", "auto-focus-keyword-for-seo"); ?></h3>
+            <span>{{ focusKeywordCoverage.seo_plugin }}</span>
+        </div>
+        <div class="afkw-coverage-bar" :aria-label="'<?php echo esc_attr__("Focus keyword coverage", "auto-focus-keyword-for-seo"); ?> ' + focusKeywordCoverage.coverage_percent + '%'">
+            <span :style="{width: focusKeywordCoverage.coverage_percent + '%'}"></span>
+        </div>
+        <div class="afkw-coverage-grid">
+            <div>
+                <strong>{{ focusKeywordCoverage.coverage_percent }}%</strong>
+                <span><?php echo esc_html__("Covered", "auto-focus-keyword-for-seo"); ?></span>
+            </div>
+            <div>
+                <strong>{{ focusKeywordCoverage.total }}</strong>
+                <span><?php echo esc_html__("Scanned items", "auto-focus-keyword-for-seo"); ?></span>
+            </div>
+            <div>
+                <strong>{{ focusKeywordCoverage.missing }}</strong>
+                <span><?php echo esc_html__("Missing focus keyword", "auto-focus-keyword-for-seo"); ?></span>
+            </div>
+        </div>
+    </div>
+
+    <div v-else class="afkw-alert afkw-note">
+        <?php echo esc_html__("No supported SEO plugin detected. Activate Yoast SEO or Rank Math to calculate focus keyword coverage.", "auto-focus-keyword-for-seo"); ?>
+    </div>
+
     <div v-if="total_items" class="row">
 
         <div class="col-xs">

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Focus Keyword for SEO 1.0.5\n"
 "Report-Msgid-Bugs-To: info@pagup.com\n"
-"POT-Creation-Date: 2026-06-22 23:09-0400\n"
+"POT-Creation-Date: 2026-07-02 15:42-0400\n"
 "PO-Revision-Date: 2026-06-23 00:00-0400\n"
 "Last-Translator: Pagup <info@pagup.com>\n"
 "Language-Team: nl_NL\n"
@@ -337,8 +337,36 @@ msgstr ""
 "ze zich bevinden. Klik kort op \"Items ophalen\" en je bent klaar om te "
 "\"Synchroniseren\"."
 
-#: admin/views/inc/sync.view.php:14
+#: admin/views/inc/sync.view.php:11 admin/views/inc/sync.view.php:14
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:11
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:14
+msgid "Focus keyword coverage"
+msgstr "Dekking van focuszoekwoorden"
+
+#: admin/views/inc/sync.view.php:20
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:20
+msgid "Covered"
+msgstr "Gedekt"
+
+#: admin/views/inc/sync.view.php:24
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:24
+msgid "Scanned items"
+msgstr "Gescande items"
+
+#: admin/views/inc/sync.view.php:28
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:28
+msgid "Missing focus keyword"
+msgstr "Ontbrekend focuszoekwoord"
+
+#: admin/views/inc/sync.view.php:34
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:34
+msgid ""
+"No supported SEO plugin detected. Activate Yoast SEO or Rank Math to "
+"calculate focus keyword coverage."
+msgstr "Geen ondersteunde SEO-plugin gedetecteerd. Activeer Yoast SEO of Rank Math om de dekking van focuszoekwoorden te berekenen."
+
+#: admin/views/inc/sync.view.php:42
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:42
 msgid ""
 "published items found without focus keyword(s). Click \"Fetch Items\" button "
 "to get ready for Sync."
@@ -346,33 +374,33 @@ msgstr ""
 "gepubliceerde items zonder focuszoekwoord gevonden. Klik op \"Items "
 "ophalen\" om klaar te maken voor synchronisatie."
 
-#: admin/views/inc/sync.view.php:18
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:18
+#: admin/views/inc/sync.view.php:46
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:46
 msgid "Fetching..."
 msgstr "Ophalen..."
 
-#: admin/views/inc/sync.view.php:18
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:18
+#: admin/views/inc/sync.view.php:46
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:46
 msgid "Fetch Items"
 msgstr "Items ophalen"
 
-#: admin/views/inc/sync.view.php:22
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:22
+#: admin/views/inc/sync.view.php:50
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:50
 msgid "Last Synced:"
 msgstr "Laatst gesynchroniseerd:"
 
-#: admin/views/inc/sync.view.php:32
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:32
+#: admin/views/inc/sync.view.php:60
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:60
 msgid "Do not close or move from this page. Progress will be cancelled."
 msgstr "Sluit of verlaat deze pagina niet. De voortgang wordt geannuleerd."
 
-#: admin/views/inc/sync.view.php:37
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:37
+#: admin/views/inc/sync.view.php:65
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:65
 msgid "Great. You've"
 msgstr "Goed. Je hebt"
 
-#: admin/views/inc/sync.view.php:37
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:37
+#: admin/views/inc/sync.view.php:65
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:65
 msgid ""
 "items in the waiting list below. Modify list (by deleting posts you don't "
 "want to sync) and hit that <strong>SYNC NOW</strong> button."
@@ -381,28 +409,28 @@ msgstr ""
 "verwijderen die je niet wilt synchroniseren en klik op <strong>NU "
 "SYNCHRONISEREN</strong>."
 
-#: admin/views/inc/sync.view.php:40
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:40
+#: admin/views/inc/sync.view.php:68
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:68
 msgid "Waiting List"
 msgstr "Wachtrij"
 
-#: admin/views/inc/sync.view.php:51
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:51
+#: admin/views/inc/sync.view.php:79
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:79
 msgid "Processing..."
 msgstr "Verwerken..."
 
-#: admin/views/inc/sync.view.php:51
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:51
+#: admin/views/inc/sync.view.php:79
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:79
 msgid "Sync Now"
 msgstr "Nu synchroniseren"
 
-#: admin/views/inc/sync.view.php:67
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:67
+#: admin/views/inc/sync.view.php:95
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:95
 msgid "[Failed!!!] "
 msgstr "[Mislukt] "
 
-#: admin/views/inc/sync.view.php:81
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:81
+#: admin/views/inc/sync.view.php:109
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:109
 msgid "Great. You've no items without focus keyword(s)."
 msgstr "Goed. Je hebt geen items zonder focuszoekwoord."
 

@@ -60,7 +60,11 @@ class SettingsController
 
         $get_pro = sprintf( wp_kses( __( '<a href="%s">Get Pro version</a> to enable', 'auto-focus-keyword-for-seo' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( 'admin.php?page='.AFKW_NAME.'-pricing' ) );
 
-        $total_items_require_sync = $this->get_total_pages_and_items();
+        $focus_keyword_coverage = $this->get_focus_keyword_coverage();
+        $total_items_require_sync = [
+            'pages' => (int) $focus_keyword_coverage['pages'],
+            'items' => (int) $focus_keyword_coverage['missing'],
+        ];
         $nonce = wp_create_nonce( 'autokeywords' );
 
         $sync_logs = get_option('afkw_autokeyword_logs');
@@ -90,6 +94,7 @@ class SettingsController
             'sync_logs' => $sync_logs,
             'posts' => $posts,
             'blacklist' => $this->blacklist(),
+            'focus_keyword_coverage' => $focus_keyword_coverage,
             'nonce' => $nonce,
         ));
 
@@ -119,12 +124,30 @@ class SettingsController
 
     public function get_total_pages_and_items(): array
     {
+        $coverage = $this->get_focus_keyword_coverage();
+
+        return [
+            'pages' => (int) $coverage['pages'],
+            'items' => (int) $coverage['missing'],
+        ];
+    }
+
+    public function get_focus_keyword_coverage(): array
+    {
         global $wpdb;
 
-        if ( $this->meta_key() === '') {
+        $meta_key = $this->meta_key();
+        $provider = $this->focus_keyword_provider();
+
+        if ( $meta_key === '') {
             return [
                 'pages' => (int) 0,
-                'items' => (int) 0
+                'total' => (int) 0,
+                'covered' => (int) 0,
+                'missing' => (int) 0,
+                'coverage_percent' => (int) 0,
+                'seo_plugin' => '',
+                'supported' => false,
             ];
         }
 
@@ -142,10 +165,23 @@ class SettingsController
         }
 
         $post_types = $this->post_types();
-        $meta_key = $this->meta_key();
 
-        $totalRows = $wpdb->get_var($wpdb->prepare("
-            SELECT COUNT(*) 
+        if ( trim( $post_types ) === '' ) {
+            return [
+                'pages' => (int) 0,
+                'total' => (int) 0,
+                'covered' => (int) 0,
+                'missing' => (int) 0,
+                'coverage_percent' => (int) 0,
+                'seo_plugin' => $provider,
+                'supported' => true,
+            ];
+        }
+
+        $row = $wpdb->get_row($wpdb->prepare("
+            SELECT
+                COUNT(*) AS total,
+                SUM(CASE WHEN pm.meta_key IS NULL OR pm.meta_value = '' THEN 1 ELSE 0 END) AS missing
             FROM {$wpdb->posts} p
             LEFT JOIN {$wpdb->postmeta} pm 
             ON p.ID = pm.post_id AND pm.meta_key = %s
@@ -153,16 +189,36 @@ class SettingsController
             AND p.post_status = 'publish'
             AND p.post_title != ''
             {$exclude_condition}
-            AND (pm.meta_key IS NULL OR pm.meta_value = '')
-        ", $meta_key));
+        ", $meta_key), ARRAY_A);
 
-        $totalPages = ceil($totalRows / $this->batch_size); // Calculate the total number of pages
+        $total = isset( $row['total'] ) ? (int) $row['total'] : 0;
+        $missing = isset( $row['missing'] ) ? (int) $row['missing'] : 0;
+        $covered = max( 0, $total - $missing );
+        $coverage_percent = $total > 0 ? (int) round( ( $covered / $total ) * 100 ) : 100;
+        $totalPages = ceil($missing / $this->batch_size); // Calculate the total number of pages
 
-        // Return total pages for batch processing and total number of rows to show whats need to synced
         return [
             'pages' => (int) $totalPages,
-            'items' => (int) $totalRows
+            'total' => (int) $total,
+            'covered' => (int) $covered,
+            'missing' => (int) $missing,
+            'coverage_percent' => (int) $coverage_percent,
+            'seo_plugin' => $provider,
+            'supported' => true,
         ];
+    }
+
+    private function focus_keyword_provider(): string
+    {
+        if ( class_exists( 'WPSEO_Meta' ) ) {
+            return 'Yoast SEO';
+        }
+
+        if ( class_exists( 'RankMath' ) ) {
+            return 'Rank Math';
+        }
+
+        return '';
     }
 
     

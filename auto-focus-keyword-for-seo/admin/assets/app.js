@@ -38,11 +38,11 @@ const app = Vue.createApp({
       errors: [],
       blacklist: data && data.blacklist ? data.blacklist : [],
       posts: data && data.posts ? data.posts : [],
+      focusKeywordCoverage:
+        data && data.focus_keyword_coverage ? data.focus_keyword_coverage : {},
     };
   },
   mounted() {
-    console.log(data);
-
     if (
       typeof data.total_pages_and_items === "object" &&
       data.total_pages_and_items !== null
@@ -93,7 +93,6 @@ jQuery(document).ready(function () {
   });
 
   jQuery("#fs_connect button[type=submit]").on("click", function (e) {
-    console.log("open verify window");
     window.open(
       "https://better-robots.com/subscribe.php?plugin=auto-keyword",
       "auto-keyword",

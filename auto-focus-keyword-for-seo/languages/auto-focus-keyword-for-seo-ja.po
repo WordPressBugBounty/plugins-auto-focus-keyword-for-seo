@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auto Focus Keyword for SEO 1.0.5\n"
 "Report-Msgid-Bugs-To: info@pagup.com\n"
-"POT-Creation-Date: 2026-06-22 23:09-0400\n"
+"POT-Creation-Date: 2026-07-02 15:42-0400\n"
 "PO-Revision-Date: 2026-06-23 00:00-0400\n"
 "Last-Translator: Pagup <info@pagup.com>\n"
 "Language-Team: ja\n"
@@ -328,8 +328,36 @@ msgstr ""
 "フォーカスキーワードを追加する前に、プラグインがそれらの場所を特定できるよう"
 "にしてください。「項目を取得」を実行すれば、「同期」の準備が整います。"
 
-#: admin/views/inc/sync.view.php:14
+#: admin/views/inc/sync.view.php:11 admin/views/inc/sync.view.php:14
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:11
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:14
+msgid "Focus keyword coverage"
+msgstr "フォーカスキーワードのカバー率"
+
+#: admin/views/inc/sync.view.php:20
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:20
+msgid "Covered"
+msgstr "設定済み"
+
+#: admin/views/inc/sync.view.php:24
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:24
+msgid "Scanned items"
+msgstr "スキャン済み項目"
+
+#: admin/views/inc/sync.view.php:28
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:28
+msgid "Missing focus keyword"
+msgstr "未設定のフォーカスキーワード"
+
+#: admin/views/inc/sync.view.php:34
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:34
+msgid ""
+"No supported SEO plugin detected. Activate Yoast SEO or Rank Math to "
+"calculate focus keyword coverage."
+msgstr "対応する SEO プラグインが検出されませんでした。Yoast SEO または Rank Math を有効化して、フォーカスキーワードのカバー率を計算してください。"
+
+#: admin/views/inc/sync.view.php:42
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:42
 msgid ""
 "published items found without focus keyword(s). Click \"Fetch Items\" button "
 "to get ready for Sync."
@@ -337,35 +365,35 @@ msgstr ""
 "フォーカスキーワードがない公開済み項目が見つかりました。「項目を取得」ボタン"
 "をクリックして同期の準備をしてください。"
 
-#: admin/views/inc/sync.view.php:18
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:18
+#: admin/views/inc/sync.view.php:46
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:46
 msgid "Fetching..."
 msgstr "取得中..."
 
-#: admin/views/inc/sync.view.php:18
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:18
+#: admin/views/inc/sync.view.php:46
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:46
 msgid "Fetch Items"
 msgstr "項目を取得"
 
-#: admin/views/inc/sync.view.php:22
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:22
+#: admin/views/inc/sync.view.php:50
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:50
 msgid "Last Synced:"
 msgstr "最終同期:"
 
-#: admin/views/inc/sync.view.php:32
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:32
+#: admin/views/inc/sync.view.php:60
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:60
 msgid "Do not close or move from this page. Progress will be cancelled."
 msgstr ""
 "このページを閉じたり移動したりしないでください。進行状況がキャンセルされま"
 "す。"
 
-#: admin/views/inc/sync.view.php:37
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:37
+#: admin/views/inc/sync.view.php:65
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:65
 msgid "Great. You've"
 msgstr "完了しました。あなたには"
 
-#: admin/views/inc/sync.view.php:37
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:37
+#: admin/views/inc/sync.view.php:65
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:65
 msgid ""
 "items in the waiting list below. Modify list (by deleting posts you don't "
 "want to sync) and hit that <strong>SYNC NOW</strong> button."
@@ -373,28 +401,28 @@ msgstr ""
 "件の項目が下の待機リストにあります。同期したくない投稿を削除してリストを調整"
 "し、<strong>今すぐ同期</strong> ボタンを押してください。"
 
-#: admin/views/inc/sync.view.php:40
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:40
+#: admin/views/inc/sync.view.php:68
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:68
 msgid "Waiting List"
 msgstr "待機リスト"
 
-#: admin/views/inc/sync.view.php:51
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:51
+#: admin/views/inc/sync.view.php:79
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:79
 msgid "Processing..."
 msgstr "処理中..."
 
-#: admin/views/inc/sync.view.php:51
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:51
+#: admin/views/inc/sync.view.php:79
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:79
 msgid "Sync Now"
 msgstr "今すぐ同期"
 
-#: admin/views/inc/sync.view.php:67
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:67
+#: admin/views/inc/sync.view.php:95
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:95
 msgid "[Failed!!!] "
 msgstr "[失敗] "
 
-#: admin/views/inc/sync.view.php:81
-#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:81
+#: admin/views/inc/sync.view.php:109
+#: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:109
 msgid "Great. You've no items without focus keyword(s)."
 msgstr "完了しました。フォーカスキーワードがない項目はありません。"
 
