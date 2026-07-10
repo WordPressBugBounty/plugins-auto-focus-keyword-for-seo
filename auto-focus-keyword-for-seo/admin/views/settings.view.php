@@ -24,11 +24,11 @@ echo wp_kses_post( $updated );
 echo esc_html__( 'About Auto Focus Keyword for SEO', 'auto-focus-keyword-for-seo' );
 ?></h2>
                 <p><?php 
-echo esc_html__( 'The Automatic Focus keyword for SEO plugin will add automatically "focus keywords" on the backend (first, then on frontend, once saved), for websites using Yoast SEO or Rank math plugins, to all your pages, based on post titles (used for each of these pages) so that you can optimize your content using their dynamic live settings (meta title, meta description, slug, alt tags, ...) for SEO. Please refer to the FAQ section to learn about all these terms (Focus Keyword, Meta tag Keyword, etc.). Once done, you will be able to use several other plugins made by Pagup.com to automatically optimize Alt tags, Title tags, Internal links and more ... (as these plugins are based on these Focus keywords). Enjoy !', 'auto-focus-keyword-for-seo' );
+echo esc_html__( 'The Automatic Focus keyword for SEO plugin will add automatically "focus keywords" on the backend, for websites using Yoast SEO, Rank Math, SEOPress, or All in One SEO plugins, to all your pages, based on post titles (used for each of these pages) so that you can optimize your content using their dynamic live settings (meta title, meta description, slug, alt tags, ...) for SEO. Please refer to the FAQ section to learn about all these terms (Focus Keyword, Meta tag Keyword, etc.). Once done, you will be able to use several other plugins made by Pagup.com to automatically optimize Alt tags, Title tags, Internal links and more ... (as these plugins are based on these Focus keywords). Enjoy !', 'auto-focus-keyword-for-seo' );
 ?>
                 </p>
                 <p style="margin-bottom: 0; font-style: italic;"><?php 
-echo esc_html__( 'PS: we strongly recommend that you do not use Yoast SEO and Rank Math plugins altogether (for compatibility matters).', 'auto-focus-keyword-for-seo' );
+echo esc_html__( 'PS: we strongly recommend that you do not use Yoast SEO, Rank Math, SEOPress, and All in One SEO plugins altogether (for compatibility matters).', 'auto-focus-keyword-for-seo' );
 ?></p>
             </div>
         </div>
@@ -236,7 +236,7 @@ echo esc_html__( 'Save Changes', 'auto-focus-keyword-for-seo' );
                 </form>
 
                 <?php 
-if ( class_exists( 'WPSEO_Meta' ) || class_exists( 'RankMath' ) ) {
+if ( $supported_seo_plugin ) {
     include "inc/sync.view.php";
 } else {
     include "inc/notice.view.php";

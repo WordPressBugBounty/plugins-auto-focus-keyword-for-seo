@@ -39,12 +39,29 @@ class SettingsController
             }
         
             check_admin_referer( 'afkw__settings', 'afkw__nonce' );
+
+            $post_types = [];
+            if ( isset( $_POST['post_types'] ) && is_array( $_POST['post_types'] ) ) {
+                $post_types = array_map( 'sanitize_key', wp_unslash( $_POST['post_types'] ) );
+            }
+
+            $blacklist = isset( $_POST['blacklist'] )
+                ? trim( sanitize_textarea_field( wp_unslash( $_POST['blacklist'] ) ) )
+                : '';
+
+            $disable_auto_sync = isset( $_POST['disable_auto_sync'] )
+                ? Request::safe( sanitize_key( wp_unslash( $_POST['disable_auto_sync'] ) ), $safe )
+                : null;
+
+            $remove_settings = isset( $_POST['remove_settings'] )
+                ? Request::safe( sanitize_key( wp_unslash( $_POST['remove_settings'] ) ), $safe )
+                : null;
         
             $options = [
-                'post_types' => array_map('sanitize_key', $_POST['post_types']),
-                'blacklist' => sanitize_textarea_field(trim($_POST['blacklist'])),
-                'disable_auto_sync' => Request::safe($_POST['disable_auto_sync'] ?? null, $safe),
-                'remove_settings' => Request::safe($_POST['remove_settings'] ?? null, $safe),
+                'post_types' => $post_types,
+                'blacklist' => $blacklist,
+                'disable_auto_sync' => $disable_auto_sync,
+                'remove_settings' => $remove_settings,
             ];
             
             update_option( 'afkw_auto-focus-keyword-for-seo', $options );
@@ -102,10 +119,11 @@ class SettingsController
         // var_dump($this->blacklist());
 
         $post_types = $this->cpts( ['attachment'] );
+        $supported_seo_plugin = $this->meta_key() !== '';
         
         if( $active_tab == 'settings' ) {
 
-            return Plugin::view('settings', compact('active_tab', 'updated', 'options', 'total_items_require_sync', 'post_types', 'get_pro'));
+            return Plugin::view('settings', compact('active_tab', 'updated', 'options', 'total_items_require_sync', 'post_types', 'get_pro', 'supported_seo_plugin'));
 
         }
 
@@ -178,18 +196,36 @@ class SettingsController
             ];
         }
 
-        $row = $wpdb->get_row($wpdb->prepare("
-            SELECT
-                COUNT(*) AS total,
-                SUM(CASE WHEN pm.meta_key IS NULL OR pm.meta_value = '' THEN 1 ELSE 0 END) AS missing
-            FROM {$wpdb->posts} p
-            LEFT JOIN {$wpdb->postmeta} pm 
-            ON p.ID = pm.post_id AND pm.meta_key = %s
-            WHERE p.post_type IN ($post_types)
-            AND p.post_status = 'publish'
-            AND p.post_title != ''
-            {$exclude_condition}
-        ", $meta_key), ARRAY_A);
+        if ( $this->uses_aioseo_focus_keyword_storage() ) {
+            $aioseo_posts_table = $wpdb->prefix . 'aioseo_posts';
+            $missing_condition = $this->aioseo_missing_focus_keyword_condition( 'ap' );
+
+            $row = $wpdb->get_row("
+                SELECT
+                    COUNT(*) AS total,
+                    SUM(CASE WHEN {$missing_condition} THEN 1 ELSE 0 END) AS missing
+                FROM {$wpdb->posts} p
+                LEFT JOIN {$aioseo_posts_table} ap
+                ON p.ID = ap.post_id
+                WHERE p.post_type IN ($post_types)
+                AND p.post_status = 'publish'
+                AND p.post_title != ''
+                {$exclude_condition}
+            ", ARRAY_A);
+        } else {
+            $row = $wpdb->get_row($wpdb->prepare("
+                SELECT
+                    COUNT(*) AS total,
+                    SUM(CASE WHEN pm.meta_key IS NULL OR pm.meta_value = '' THEN 1 ELSE 0 END) AS missing
+                FROM {$wpdb->posts} p
+                LEFT JOIN {$wpdb->postmeta} pm
+                ON p.ID = pm.post_id AND pm.meta_key = %s
+                WHERE p.post_type IN ($post_types)
+                AND p.post_status = 'publish'
+                AND p.post_title != ''
+                {$exclude_condition}
+            ", $meta_key), ARRAY_A);
+        }
 
         $total = isset( $row['total'] ) ? (int) $row['total'] : 0;
         $missing = isset( $row['missing'] ) ? (int) $row['missing'] : 0;
@@ -216,6 +252,14 @@ class SettingsController
 
         if ( class_exists( 'RankMath' ) ) {
             return 'Rank Math';
+        }
+
+        if ( defined( 'SEOPRESS_VERSION' ) || function_exists( 'seopress_get_service' ) ) {
+            return 'SEOPress';
+        }
+
+        if ( defined( 'AIOSEO_VERSION' ) || function_exists( 'aioseo' ) ) {
+            return 'All in One SEO';
         }
 
         return '';

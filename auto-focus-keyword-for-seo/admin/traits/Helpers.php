@@ -40,10 +40,193 @@ trait Helpers
             $meta_key = '_yoast_wpseo_focuskw';
         } elseif ( class_exists( 'RankMath' ) ) {
             $meta_key = 'rank_math_focus_keyword';
+        } elseif ( defined( 'SEOPRESS_VERSION' ) || function_exists( 'seopress_get_service' ) ) {
+            $meta_key = '_seopress_analysis_target_kw';
+        } elseif ( defined( 'AIOSEO_VERSION' ) || function_exists( 'aioseo' ) ) {
+            $meta_key = 'aioseo_table';
         } else {
             $meta_key = '';
         }
         return $meta_key;
+    }
+
+    public function uses_aioseo_focus_keyword_storage() : bool {
+        return $this->meta_key() === 'aioseo_table';
+    }
+
+    public function focus_keyword_provider() : string {
+        if ( class_exists( 'WPSEO_Meta' ) ) {
+            return 'Yoast SEO';
+        }
+
+        if ( class_exists( 'RankMath' ) ) {
+            return 'Rank Math';
+        }
+
+        if ( defined( 'SEOPRESS_VERSION' ) || function_exists( 'seopress_get_service' ) ) {
+            return 'SEOPress';
+        }
+
+        if ( defined( 'AIOSEO_VERSION' ) || function_exists( 'aioseo' ) ) {
+            return 'All in One SEO';
+        }
+
+        return '';
+    }
+
+    public function get_focus_keyword_value( $post_id ) : string {
+        $post_id = (int) $post_id;
+
+        if ( $post_id <= 0 ) {
+            return '';
+        }
+
+        if ( $this->uses_aioseo_focus_keyword_storage() ) {
+            global $wpdb;
+
+            $table_name = $wpdb->prefix . 'aioseo_posts';
+            $keyphrases = $wpdb->get_var( $wpdb->prepare(
+                "SELECT keyphrases FROM {$table_name} WHERE post_id = %d LIMIT 1",
+                $post_id
+            ) );
+
+            return $this->extract_aioseo_focus_keyword( $keyphrases );
+        }
+
+        $meta_key = $this->meta_key();
+
+        if ( $meta_key === '' ) {
+            return '';
+        }
+
+        return (string) get_post_meta( $post_id, $meta_key, true );
+    }
+
+    public function update_focus_keyword_value( $post_id, $focus_keyword ) : bool {
+        $post_id = (int) $post_id;
+        $focus_keyword = sanitize_text_field( $focus_keyword );
+
+        if ( $post_id <= 0 || $focus_keyword === '' ) {
+            return false;
+        }
+
+        if ( $this->uses_aioseo_focus_keyword_storage() ) {
+            return $this->update_aioseo_focus_keyword( $post_id, $focus_keyword );
+        }
+
+        $meta_key = $this->meta_key();
+
+        if ( $meta_key === '' ) {
+            return false;
+        }
+
+        return (bool) update_post_meta( $post_id, $meta_key, $focus_keyword );
+    }
+
+    public function clear_focus_keyword_value( $post_id ) : bool {
+        $post_id = (int) $post_id;
+
+        if ( $post_id <= 0 ) {
+            return false;
+        }
+
+        if ( $this->uses_aioseo_focus_keyword_storage() ) {
+            return $this->update_aioseo_focus_keyword( $post_id, '' );
+        }
+
+        $meta_key = $this->meta_key();
+
+        if ( $meta_key === '' ) {
+            return false;
+        }
+
+        return (bool) delete_post_meta( $post_id, $meta_key );
+    }
+
+    public function aioseo_missing_focus_keyword_condition( $table_alias = 'ap' ) : string {
+        $table_alias = preg_replace( '/[^A-Za-z0-9_]/', '', (string) $table_alias );
+
+        if ( $table_alias === '' ) {
+            $table_alias = 'ap';
+        }
+
+        return "({$table_alias}.keyphrases = '' OR {$table_alias}.keyphrases IS NULL OR {$table_alias}.keyphrases = '[]' OR {$table_alias}.keyphrases LIKE '{\"focus\":{\"keyphrase\":\"\"%')";
+    }
+
+    private function extract_aioseo_focus_keyword( $keyphrases ) : string {
+        if ( empty( $keyphrases ) ) {
+            return '';
+        }
+
+        $data = json_decode( (string) $keyphrases, true );
+
+        if ( ! is_array( $data ) || empty( $data['focus']['keyphrase'] ) ) {
+            return '';
+        }
+
+        return (string) $data['focus']['keyphrase'];
+    }
+
+    private function update_aioseo_focus_keyword( $post_id, $focus_keyword ) : bool {
+        global $wpdb;
+
+        $table_name = $wpdb->prefix . 'aioseo_posts';
+        $row = $wpdb->get_row( $wpdb->prepare(
+            "SELECT id, keyphrases FROM {$table_name} WHERE post_id = %d LIMIT 1",
+            $post_id
+        ), ARRAY_A );
+
+        $keyphrases = [];
+
+        if ( isset( $row['keyphrases'] ) && ! empty( $row['keyphrases'] ) ) {
+            $decoded = json_decode( (string) $row['keyphrases'], true );
+            $keyphrases = is_array( $decoded ) ? $decoded : [];
+        }
+
+        if ( empty( $keyphrases['focus'] ) || ! is_array( $keyphrases['focus'] ) ) {
+            $keyphrases['focus'] = [];
+        }
+
+        $keyphrases['focus']['keyphrase'] = $focus_keyword;
+
+        if ( ! isset( $keyphrases['focus']['score'] ) ) {
+            $keyphrases['focus']['score'] = 0;
+        }
+
+        if ( empty( $keyphrases['focus']['analysis'] ) || ! is_array( $keyphrases['focus']['analysis'] ) ) {
+            $keyphrases['focus']['analysis'] = [];
+        }
+
+        if ( empty( $keyphrases['additional'] ) || ! is_array( $keyphrases['additional'] ) ) {
+            $keyphrases['additional'] = [];
+        }
+
+        $now = current_time( 'mysql' );
+        $payload = [
+            'keyphrases' => wp_json_encode( $keyphrases ),
+            'updated' => $now,
+        ];
+
+        if ( isset( $row['id'] ) ) {
+            return false !== $wpdb->update(
+                $table_name,
+                $payload,
+                [ 'id' => (int) $row['id'] ],
+                [ '%s', '%s' ],
+                [ '%d' ]
+            );
+        }
+
+        return false !== $wpdb->insert(
+            $table_name,
+            [
+                'post_id' => $post_id,
+                'keyphrases' => $payload['keyphrases'],
+                'created' => $now,
+                'updated' => $now,
+            ],
+            [ '%d', '%s', '%s', '%s' ]
+        );
     }
 
     /**

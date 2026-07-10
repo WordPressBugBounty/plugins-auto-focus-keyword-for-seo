@@ -24,10 +24,15 @@ class KeywordController
             wp_die();
         }
     
-        $page = intval($_POST['page']);
-        $totalPages = intval($_POST['totalPages']);
-        $batchSize = intval($_POST['batchSize']); // Set the batch size
-        $offset = intval($_POST['offset']); // Calculate the offset
+        $page = isset( $_POST['page'] ) ? absint( wp_unslash( $_POST['page'] ) ) : 0;
+        $totalPages = isset( $_POST['totalPages'] ) ? absint( wp_unslash( $_POST['totalPages'] ) ) : 0;
+        $batchSize = isset( $_POST['batchSize'] ) ? absint( wp_unslash( $_POST['batchSize'] ) ) : 0; // Set the batch size
+        $offset = isset( $_POST['offset'] ) ? absint( wp_unslash( $_POST['offset'] ) ) : 0; // Calculate the offset
+
+        if ( $totalPages <= 0 || $batchSize <= 0 ) {
+            wp_send_json_error( "Invalid sync batch", 400 );
+            wp_die();
+        }
     
         if ( $this->meta_key() === '') {
             return;
@@ -48,19 +53,38 @@ class KeywordController
     
         $post_types = $this->post_types();
     
-        $query = $wpdb->prepare("
-            SELECT ID, post_title
-            FROM {$wpdb->posts} p
-            LEFT JOIN {$wpdb->postmeta} pm 
-            ON p.ID = pm.post_id AND pm.meta_key = %s
-            WHERE p.post_type IN ($post_types)
-            AND p.post_status = 'publish'
-            AND (pm.meta_key IS NULL OR pm.meta_value = '')
-            AND p.post_title != ''
-            {$exclude_condition}
-            ORDER BY pm.meta_id ASC
-            LIMIT %d OFFSET %d
-        ", $this->meta_key(), $batchSize, $offset);
+        if ( $this->uses_aioseo_focus_keyword_storage() ) {
+            $aioseo_posts_table = $wpdb->prefix . 'aioseo_posts';
+            $missing_condition = $this->aioseo_missing_focus_keyword_condition( 'ap' );
+
+            $query = $wpdb->prepare("
+                SELECT p.ID, p.post_title
+                FROM {$wpdb->posts} p
+                LEFT JOIN {$aioseo_posts_table} ap
+                ON p.ID = ap.post_id
+                WHERE p.post_type IN ($post_types)
+                AND p.post_status = 'publish'
+                AND {$missing_condition}
+                AND p.post_title != ''
+                {$exclude_condition}
+                ORDER BY p.ID ASC
+                LIMIT %d OFFSET %d
+            ", $batchSize, $offset);
+        } else {
+            $query = $wpdb->prepare("
+                SELECT ID, post_title
+                FROM {$wpdb->posts} p
+                LEFT JOIN {$wpdb->postmeta} pm
+                ON p.ID = pm.post_id AND pm.meta_key = %s
+                WHERE p.post_type IN ($post_types)
+                AND p.post_status = 'publish'
+                AND (pm.meta_key IS NULL OR pm.meta_value = '')
+                AND p.post_title != ''
+                {$exclude_condition}
+                ORDER BY pm.meta_id ASC
+                LIMIT %d OFFSET %d
+            ", $this->meta_key(), $batchSize, $offset);
+        }
     
         $posts = $wpdb->get_results($query);
     
@@ -96,15 +120,15 @@ class KeywordController
             wp_die();
         }
     
-        $post_id = sanitize_text_field($_POST['post_id']);
-        $post_title = sanitize_text_field($_POST['post_title']);
+        $post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;
+        $post_title = isset( $_POST['post_title'] ) ? sanitize_text_field( wp_unslash( $_POST['post_title'] ) ) : '';
     
         if ( $this->meta_key() === '') {
-            wp_send_json_error("It seems Yoast SEO or Rank Math SEO plugin is not activated");
+            wp_send_json_error("It seems Yoast SEO, Rank Math SEO, SEOPress, or All in One SEO plugin is not activated");
             wp_die();
         }
     
-        $result = update_post_meta($post_id, $this->meta_key(), $post_title, true);
+        $result = $this->update_focus_keyword_value( $post_id, $post_title );
     
         if ($result) {
             // Get the existing options array
@@ -162,7 +186,7 @@ class KeywordController
             wp_die();
         }
     
-        $id = sanitize_text_field(intval($_POST['id']));
+        $id = isset( $_POST['id'] ) ? absint( wp_unslash( $_POST['id'] ) ) : 0;
     
         if (isset($id) && !empty($id)) {
             $options = get_option('afkw_autokeyword_logs');
@@ -182,20 +206,20 @@ class KeywordController
 
                 // Check supported SEO plugin is installed and activated
                 if ( $this->meta_key() === '') {
-                    wp_send_json_error("It seems Yoast SEO or Rank Math SEO plugin is not activated");
+                    wp_send_json_error("It seems Yoast SEO, Rank Math SEO, SEOPress, or All in One SEO plugin is not activated");
                 } else {
 
                     // Get the post title
                     $post_title = get_the_title($id);
                     $post_title = html_entity_decode($post_title, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
-                    // Get the focus keyword value from post meta
-                    $focus_keyword = get_post_meta($id, $this->meta_key(), true);
+                    // Get the focus keyword value from the active SEO plugin storage.
+                    $focus_keyword = $this->get_focus_keyword_value( $id );
 
                     // Compare the focus keyword with the post title
                     if ($focus_keyword === $post_title) {
-                        // Remove the focus keyword value from post meta
-                        delete_post_meta($id, $this->meta_key());
+                        // Remove the focus keyword value from the active SEO plugin storage.
+                        $this->clear_focus_keyword_value( $id );
                     }
                 }
                 
@@ -230,7 +254,9 @@ class KeywordController
             wp_die();
         }
 
-        if (isset($_POST['alldone']) && !empty($_POST['alldone'])) {
+        $all_done = isset( $_POST['alldone'] ) ? sanitize_text_field( wp_unslash( $_POST['alldone'] ) ) : '';
+
+        if ( ! empty( $all_done ) ) {
             $date = current_time('F d, Y h:i:sa');
             update_option("afkw_autokeyword_sync", $date);
         }

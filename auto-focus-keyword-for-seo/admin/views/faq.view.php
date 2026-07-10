@@ -11,13 +11,13 @@
 
                 <div class="afkw-segment">
 
-                    <h2><?php echo esc_html__('What is a "Focus Keyword" according to Yoast and Rank Math plugin', 'auto-focus-keyword-for-seo'); ?></h2>
+                    <h2><?php echo esc_html__('What is a "Focus Keyword" according to Yoast, Rank Math, SEOPress, and All in One SEO plugins', 'auto-focus-keyword-for-seo'); ?></h2>
 
-                    <p><?php echo esc_html__( 'The "Focus Keyword" feature of Yoast SEO and Rank Math is a dynamic backend tool that allows the optimization of a page based on a central query, with the aim of maximizing its understanding by search engines and generating consistent SEO. This "Focus Keyword" will also be deployed as a "Meta Tag keyword" on the frontend, in the HTML code of your website.', 'auto-focus-keyword-for-seo' ); ?></p>
+                    <p><?php echo esc_html__( 'The "Focus Keyword" feature of Yoast SEO, Rank Math, SEOPress, and All in One SEO is a dynamic backend tool that allows the optimization of a page based on a central query, with the aim of maximizing its understanding by search engines and generating consistent SEO. The active SEO plugin may also use this value in the frontend metadata of your website.', 'auto-focus-keyword-for-seo' ); ?></p>
 
                     <p><?php echo esc_html__( 'The "Focus Keyword" feature (or "Primary Keyword") allows users to specify a target keyword or phrase for each article or page of their website. The goal is to optimize the content around this keyword to improve the chances of ranking in search engines for that specific query.', 'auto-focus-keyword-for-seo' ); ?></p>
 
-                    <p><?php echo esc_html__( 'By using the "Focus Keyword" feature of Yoast SEO or Rank Math, you can refine your content to align with the best SEO practices and increase your chances of being well-ranked in search engine results for your target keyword.', 'auto-focus-keyword-for-seo' ); ?></p>
+                    <p><?php echo esc_html__( 'By using the "Focus Keyword" feature of Yoast SEO, Rank Math, SEOPress, or All in One SEO, you can refine your content to align with the best SEO practices and increase your chances of being well-ranked in search engine results for your target keyword.', 'auto-focus-keyword-for-seo' ); ?></p>
 
                 </div>
 
@@ -55,7 +55,7 @@
 
                     <h2><?php echo esc_html__('What happens If I uninstall this plugin ?', 'auto-focus-keyword-for-seo'); ?></h2>
 
-                    <p><?php echo esc_html__( 'The focus keyword values are saved inside the database in the post meta table. So they will not be automatically removed if you deactivate or uninstall the plugin. But if you want to get rid of focus keywords created by "Auto Focus Keyword for SEO" plugin then there is an easy way. You can go to the <b>Sync logs</b> page from the menu on the Settings page, select all or the post you want to remove, and then delete them. If the focus keyword is not modified (same as the post title) then it will be automatically removed. Once all logs are deleted, you can uninstall the plugin.', 'auto-focus-keyword-for-seo' ); ?></p>
+                    <p><?php echo esc_html__( 'The focus keyword values are saved inside the active SEO plugin storage. So they will not be automatically removed if you deactivate or uninstall this plugin. But if you want to get rid of focus keywords created by "Auto Focus Keyword for SEO" plugin then there is an easy way. You can go to the <b>Sync logs</b> page from the menu on the Settings page, select all or the post you want to remove, and then delete them. If the focus keyword is not modified (same as the post title) then it will be automatically removed. Once all logs are deleted, you can uninstall the plugin.', 'auto-focus-keyword-for-seo' ); ?></p>
 
                 </div>
 

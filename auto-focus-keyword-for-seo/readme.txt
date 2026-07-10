@@ -1,20 +1,20 @@
 === Auto Focus Keyword for SEO ===
 Contributors: the-rock, pagup, freemius
-Tags: focus keyword, yoast seo, rank math, seo, keyword automation
+Tags: focus keyword, yoast seo, rank math, seopress, aioseo, seo, keyword automation
 Requires at least: 4.1
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically fill missing Yoast SEO or Rank Math focus keywords from post titles. Batch sync, exclusions, and Pro auto-sync.
+Automatically fill missing Yoast SEO, Rank Math, SEOPress, or All in One SEO focus keywords from post titles. Batch sync, exclusions, and Pro auto-sync.
 
 == Description ==
 
 **Auto Focus Keyword for SEO** is a WordPress plugin that fills **missing** focus keyword fields from the **post title**.
 
-It is designed for sites that already use **Yoast SEO** or **Rank Math** and want a faster way to populate focus keywords across existing content.
+It is designed for sites that already use **Yoast SEO**, **Rank Math**, **SEOPress**, or **All in One SEO (AIOSEO)** and want a faster way to populate focus keywords across existing content.
 
 Official documentation: [https://autolinksforseo.com/focus-keyword](https://autolinksforseo.com/focus-keyword)
 
@@ -23,7 +23,7 @@ Official documentation: [https://autolinksforseo.com/focus-keyword](https://auto
 - **Product type:** WordPress SEO workflow plugin
 - **Main action:** fills missing focus keyword fields from post titles
 - **Works in:** WordPress admin / backend
-- **Supported SEO plugins:** Yoast SEO, Rank Math
+- **Supported SEO plugins:** Yoast SEO, Rank Math, SEOPress, All in One SEO (AIOSEO)
 - **Default workflow:** FETCH then SYNC
 - **Overwrite existing keywords:** no
 - **Keyword research / AI generation:** no
@@ -52,7 +52,6 @@ Auto Focus Keyword does **not** do the following:
 - it does **not** estimate search volume or difficulty
 - it does **not** rewrite titles, content, or meta descriptions
 - it does **not** overwrite existing focus keywords during batch sync
-- it does **not** support All in One SEO (AIOSEO) in the current version
 - it does **not** guarantee that a page title is the ideal target query in every case
 
 This distinction matters: Auto Focus Keyword is a **bulk field population tool**, not a full keyword research platform.
@@ -108,10 +107,12 @@ Auto Focus Keyword supports:
 
 - **Yoast SEO**
 - **Rank Math**
+- **SEOPress**
+- **All in One SEO (AIOSEO)**
 
 It does not create its own focus keyword system. It writes to the supported SEO plugin field already present on the site.
 
-If neither Yoast SEO nor Rank Math is active, there is no supported focus keyword field to fill.
+If none of Yoast SEO, Rank Math, SEOPress, or All in One SEO is active, there is no supported focus keyword field to fill.
 
 = How it works =
 
@@ -186,17 +187,13 @@ Auto Focus Keyword is part of a broader practice that includes [semantic content
 
 = What is Auto Focus Keyword for SEO? =
 
-It is a WordPress plugin that fills **missing** Yoast SEO or Rank Math focus keyword fields from post titles.
+It is a WordPress plugin that fills **missing** Yoast SEO, Rank Math, SEOPress, or All in One SEO focus keyword fields from post titles.
 
 = Which SEO plugins are supported? =
 
-Auto Focus Keyword supports **Yoast SEO** and **Rank Math**.
+Auto Focus Keyword supports **Yoast SEO**, **Rank Math**, **SEOPress**, and **All in One SEO (AIOSEO)**.
 
-= Does it support All in One SEO (AIOSEO)? =
-
-No. The current version supports **Yoast SEO** and **Rank Math** only.
-
-= Does it work without Yoast SEO or Rank Math? =
+= Does it work without Yoast SEO, Rank Math, SEOPress, or All in One SEO? =
 
 No. The plugin needs a supported focus keyword field to write into.
 
@@ -261,6 +258,9 @@ Digital readability is the capacity of a website to be correctly understood by a
 4. Activity log
 
 == Changelog ==
+
+= 1.0.8 =
+* Add SEOPress and All in One SEO focus keyword support, and harden metabox saves.
 
 = 1.0.7 =
 * Add a focus keyword coverage panel, update translation catalogues, and remove admin debug logging.

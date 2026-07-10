@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Auto Focus Keyword for SEO 1.0.6\n"
+"Project-Id-Version: Auto Focus Keyword for SEO 1.0.7\n"
 "Report-Msgid-Bugs-To: info@pagup.com\n"
-"POT-Creation-Date: 2026-07-02 15:42-0400\n"
+"POT-Creation-Date: 2026-07-04 11:43-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,17 +37,19 @@ msgstr ""
 
 #: admin/views/faq.view.php:14
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:14
-msgid "What is a \"Focus Keyword\" according to Yoast and Rank Math plugin"
+msgid ""
+"What is a \"Focus Keyword\" according to Yoast, Rank Math, SEOPress, and All "
+"in One SEO plugins"
 msgstr ""
 
 #: admin/views/faq.view.php:16
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:16
 msgid ""
-"The \"Focus Keyword\" feature of Yoast SEO and Rank Math is a dynamic "
-"backend tool that allows the optimization of a page based on a central "
-"query, with the aim of maximizing its understanding by search engines and "
-"generating consistent SEO. This \"Focus Keyword\" will also be deployed as a "
-"\"Meta Tag keyword\" on the frontend, in the HTML code of your website."
+"The \"Focus Keyword\" feature of Yoast SEO, Rank Math, SEOPress, and All in "
+"One SEO is a dynamic backend tool that allows the optimization of a page "
+"based on a central query, with the aim of maximizing its understanding by "
+"search engines and generating consistent SEO. The active SEO plugin may also "
+"use this value in the frontend metadata of your website."
 msgstr ""
 
 #: admin/views/faq.view.php:18
@@ -62,10 +64,10 @@ msgstr ""
 #: admin/views/faq.view.php:20
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:20
 msgid ""
-"By using the \"Focus Keyword\" feature of Yoast SEO or Rank Math, you can "
-"refine your content to align with the best SEO practices and increase your "
-"chances of being well-ranked in search engine results for your target "
-"keyword."
+"By using the \"Focus Keyword\" feature of Yoast SEO, Rank Math, SEOPress, or "
+"All in One SEO, you can refine your content to align with the best SEO "
+"practices and increase your chances of being well-ranked in search engine "
+"results for your target keyword."
 msgstr ""
 
 #: admin/views/faq.view.php:26
@@ -151,22 +153,21 @@ msgstr ""
 #: admin/views/faq.view.php:58
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/faq.view.php:58
 msgid ""
-"The focus keyword values are saved inside the database in the post meta "
-"table. So they will not be automatically removed if you deactivate or "
-"uninstall the plugin. But if you want to get rid of focus keywords created "
-"by \"Auto Focus Keyword for SEO\" plugin then there is an easy way. You can "
-"go to the <b>Sync logs</b> page from the menu on the Settings page, select "
-"all or the post you want to remove, and then delete them. If the focus "
-"keyword is not modified (same as the post title) then it will be "
-"automatically removed. Once all logs are deleted, you can uninstall the "
-"plugin."
+"The focus keyword values are saved inside the active SEO plugin storage. So "
+"they will not be automatically removed if you deactivate or uninstall this "
+"plugin. But if you want to get rid of focus keywords created by \"Auto Focus "
+"Keyword for SEO\" plugin then there is an easy way. You can go to the "
+"<b>Sync logs</b> page from the menu on the Settings page, select all or the "
+"post you want to remove, and then delete them. If the focus keyword is not "
+"modified (same as the post title) then it will be automatically removed. "
+"Once all logs are deleted, you can uninstall the plugin."
 msgstr ""
 
 #: admin/views/inc/notice.view.php:4
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/notice.view.php:4
 msgid ""
-"It seems Yoast SEO or Rank Math SEO are not activated. You need one of them "
-"for this plugin to work properly."
+"It seems Yoast SEO, Rank Math SEO, SEOPress, or All in One SEO are not "
+"activated. You need one of them for this plugin to work properly."
 msgstr ""
 
 #: admin/views/inc/side.view.php:5
@@ -294,8 +295,8 @@ msgstr ""
 #: admin/views/inc/sync.view.php:34
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/inc/sync.view.php:34
 msgid ""
-"No supported SEO plugin detected. Activate Yoast SEO or Rank Math to "
-"calculate focus keyword coverage."
+"No supported SEO plugin detected. Activate Yoast SEO, Rank Math, SEOPress, "
+"or All in One SEO to calculate focus keyword coverage."
 msgstr ""
 
 #: admin/views/inc/sync.view.php:42
@@ -433,22 +434,22 @@ msgstr ""
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:15
 msgid ""
 "The Automatic Focus keyword for SEO plugin will add automatically \"focus "
-"keywords\" on the backend (first, then on frontend, once saved), for "
-"websites using Yoast SEO or Rank math plugins, to all your pages, based on "
-"post titles (used for each of these pages) so that you can optimize your "
-"content using their dynamic live settings (meta title, meta description, "
-"slug, alt tags, ...) for SEO. Please refer to the FAQ section to learn about "
-"all these terms (Focus Keyword, Meta tag Keyword, etc.). Once done, you will "
-"be able to use several other plugins made by Pagup.com to automatically "
-"optimize Alt tags, Title tags, Internal links and more ... (as these plugins "
-"are based on these Focus keywords). Enjoy !"
+"keywords\" on the backend, for websites using Yoast SEO, Rank Math, "
+"SEOPress, or All in One SEO plugins, to all your pages, based on post titles "
+"(used for each of these pages) so that you can optimize your content using "
+"their dynamic live settings (meta title, meta description, slug, alt "
+"tags, ...) for SEO. Please refer to the FAQ section to learn about all these "
+"terms (Focus Keyword, Meta tag Keyword, etc.). Once done, you will be able "
+"to use several other plugins made by Pagup.com to automatically optimize Alt "
+"tags, Title tags, Internal links and more ... (as these plugins are based on "
+"these Focus keywords). Enjoy !"
 msgstr ""
 
 #: admin/views/settings.view.php:31
 #: premium/auto-focus-keyword-for-seo-premium/admin/views/settings.view.php:17
 msgid ""
-"PS: we strongly recommend that you do not use Yoast SEO and Rank Math "
-"plugins altogether (for compatibility matters)."
+"PS: we strongly recommend that you do not use Yoast SEO, Rank Math, "
+"SEOPress, and All in One SEO plugins altogether (for compatibility matters)."
 msgstr ""
 
 #: admin/views/settings.view.php:56

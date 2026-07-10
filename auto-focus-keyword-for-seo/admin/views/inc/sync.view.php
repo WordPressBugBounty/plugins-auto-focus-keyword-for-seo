@@ -31,7 +31,7 @@
     </div>
 
     <div v-else class="afkw-alert afkw-note">
-        <?php echo esc_html__("No supported SEO plugin detected. Activate Yoast SEO or Rank Math to calculate focus keyword coverage.", "auto-focus-keyword-for-seo"); ?>
+        <?php echo esc_html__("No supported SEO plugin detected. Activate Yoast SEO, Rank Math, SEOPress, or All in One SEO to calculate focus keyword coverage.", "auto-focus-keyword-for-seo"); ?>
     </div>
 
     <div v-if="total_items" class="row">
