@@ -3,7 +3,7 @@
 <div class="wrap container-fluid afkw-container">
     <div class="afkw-inner-container">
     
-        <?php include 'inc/top.view.php'; ?>
+        <?php include __DIR__ . '/inc/top.view.php'; ?>
 
         <div class="row">
 

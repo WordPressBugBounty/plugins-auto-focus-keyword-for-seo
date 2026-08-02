@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) {
     <div class="afkw-inner-container">
     
         <?php 
-include 'inc/top.view.php';
+include __DIR__ . '/inc/top.view.php';
 ?>
 
         <div class="row" style="margin: 0 0.2rem 0;">
@@ -237,9 +237,9 @@ echo esc_html__( 'Save Changes', 'auto-focus-keyword-for-seo' );
 
                 <?php 
 if ( $supported_seo_plugin ) {
-    include "inc/sync.view.php";
+    include __DIR__ . '/inc/sync.view.php';
 } else {
-    include "inc/notice.view.php";
+    include __DIR__ . '/inc/notice.view.php';
 }
 ?>
     
@@ -248,7 +248,7 @@ if ( $supported_seo_plugin ) {
             <div class="col-xs-12 col-md-3 col-side" style="padding-right: 0.8rem; padding-left: 0.8rem;">
 
                 <?php 
-include "inc/side.view.php";
+include __DIR__ . '/inc/side.view.php';
 ?>
 
             </div>
