@@ -47,7 +47,7 @@ wp_nonce_field( 'afkw__settings', 'afkw__nonce' );
     
                         <h2>STEP 1: Settings</h2>
 
-                        <div class="row" style="margin-top: 20px;">
+                        <div class="row afkw-settings-row" style="margin-top: 20px;">
     
                             <div class="col-xs-3">
                                 <label class="afkw-label" for="afkw__enable">
@@ -123,7 +123,7 @@ if ( class_exists( 'WooCommerce' ) && !afkw__fs()->can_use_premium_code__premium
     
                         </div>
 
-                        <div class="row" style="margin-top: 15px;">
+                        <div class="row afkw-settings-row" style="margin-top: 15px;">
                             <div class="col-xs-6 col-md-3">
                                 <label for="exclude_tags" class="afkw-label">
                                     <strong><?php 
@@ -165,7 +165,7 @@ echo esc_html__( '100% Automatic - No more manual action required.', 'auto-focus
 ?>" flow="right"> <i class="dashicons dashicons-editor-help"></i></span>
                         </h2>
 
-                            <div class="row" style="margin-top: 15px;">
+                            <div class="row afkw-settings-row" style="margin-top: 15px;">
                             
                                 <div class="col-xs-6 col-md-6">
                                     <label for="disable_auto_sync" class="afkw-label" style="display: inline-block; margin-top: 10px;">
@@ -201,7 +201,7 @@ echo sprintf( wp_kses( __( '<a href="%s">Get Pro version</a> to enable Continuou
 
                         </div>
                         
-                        <div class="row" style="margin-top: 15px">
+                        <div class="row afkw-settings-row" style="margin-top: 15px">
 
                             <div class="col-xs-3">
                                 <label class="afkw-label" for="remove_settings">
@@ -241,6 +241,8 @@ if ( $supported_seo_plugin ) {
 } else {
     include __DIR__ . '/inc/notice.view.php';
 }
+
+include __DIR__ . '/inc/agent-control.view.php';
 ?>
     
             </div>

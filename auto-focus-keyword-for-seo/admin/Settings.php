@@ -21,6 +21,7 @@ class Settings {
         // Add setting link to plugin page
         $plugin_base = AFKW_PLUGIN_BASE;
         add_filter( "plugin_action_links_{$plugin_base}", array(&$this, 'setting_link') );
+        add_filter( 'plugin_row_meta', array(&$this, 'agent_control_row_meta'), 10, 2 );
         // Add styles and scripts
         add_action( 'admin_enqueue_scripts', array(&$this, 'assets') );
         add_filter(
@@ -33,6 +34,31 @@ class Settings {
 
     public function setting_link( $links ) {
         array_unshift( $links, '<a href="/wp-admin/admin.php?page=' . AFKW_NAME . '">Settings</a>' );
+        return $links;
+    }
+
+    public function agent_control_row_meta( $links, $file ) {
+        if ( AFKW_PLUGIN_BASE !== $file ) {
+            return $links;
+        }
+
+        $active = defined( 'PAC_VERSION' ) || class_exists( '\\Pagup\\AgentControl\\Plugin', false );
+        $url = $active ? admin_url( 'admin.php?page=pagup-agent-control' ) : 'https://wpagentcontrol.com/';
+        $label = sprintf(
+            /* translators: 1: Pagup ecosystem label, 2: product name. */
+            __( '%1$s · %2$s', 'auto-focus-keyword-for-seo' ),
+            __( 'Part of the Pagup ecosystem', 'auto-focus-keyword-for-seo' ),
+            __( 'Agent Control', 'auto-focus-keyword-for-seo' )
+        );
+        $attributes = $active ? '' : ' target="_blank" rel="noopener noreferrer"';
+
+        $links[] = sprintf(
+            '<a href="%1$s"%2$s>%3$s</a>',
+            esc_url( $url ),
+            $attributes,
+            esc_html( $label )
+        );
+
         return $links;
     }
 

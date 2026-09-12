@@ -4,7 +4,7 @@ Tags: focus keyword, yoast seo, rank math, seopress, aioseo, seo, keyword automa
 Requires at least: 4.1
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -233,6 +233,10 @@ The plugin includes a **remove settings** option for plugin settings. Generated 
 
 Yes. Auto Focus Keyword is designed to work naturally with the broader focus keyword to internal linking workflow documented on autolinksforseo.com.
 
+= Can I use Claude Code or Codex with this WordPress site? =
+
+Auto Focus Keyword does not grant AI agents access to WordPress. PAGUP Agent Control is a separate product designed to give compatible AI agents a dedicated WordPress identity with explicit permissions. It can support read-only content audits and controlled draft workflows, depending on the selected mode. It does not write directly to proprietary SEO fields on behalf of Auto Focus Keyword.
+
 = Where can I find the full documentation? =
 
 Documentation is available at [https://autolinksforseo.com/focus-keyword](https://autolinksforseo.com/focus-keyword).
@@ -257,7 +261,17 @@ Digital readability is the capacity of a website to be correctly understood by a
 3. Post type selection and exclusions
 4. Activity log
 
+== Upgrade Notice ==
+
+= 1.0.10 =
+Maintenance release: refreshes the bundled Freemius SDK to 2.13.4 and adds contextual PAGUP Agent Control examples. Focus keyword generation is unchanged.
+
 == Changelog ==
+
+= 1.0.10 =
+* Updated the bundled Freemius WordPress SDK from 2.13.1 to 2.13.4 for current pricing, payment-history currency, API-timeout, PHP compatibility, and add-on checkout behavior.
+* Added contextual PAGUP Agent Control examples for read-only content reviews and controlled draft workflows.
+* Refreshed the translation template and all ten shipped locale catalogs for the new interface strings.
 
 = 1.0.9 =
 * Anchor all PHP includes to the plugin directory to prevent include_path conflicts with other plugins.

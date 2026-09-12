@@ -751,3 +751,132 @@ ul.afkw-log li ul {
 .multiselect-wrapper {
   padding: 5px 0;
 }
+
+.afkw-agent-control {
+  margin-top: 20px;
+  border-top: 4px solid #00a184;
+}
+.afkw-agent-control__header,
+.afkw-agent-control__footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.afkw-agent-control__header > div,
+.afkw-agent-control__footer > p {
+  min-width: 0;
+}
+.afkw-agent-control__eyebrow {
+  margin: 0 0 6px;
+  color: #007c68;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.afkw-agent-control__status,
+.afkw-agent-control__mode {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.afkw-agent-control__status.is-active {
+  background: #dff6e8;
+  color: #176b36;
+}
+.afkw-agent-control__status.is-inactive {
+  background: #f2f4f7;
+  color: #50575e;
+}
+.afkw-agent-control__tasks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.afkw-agent-control__task {
+  min-width: 0;
+  border: 1px solid #dcdcde;
+  border-radius: 6px;
+  background: #fff;
+  padding: 16px;
+}
+.afkw-agent-control__task h4 {
+  margin: 10px 0 8px;
+  font-size: 15px;
+}
+.afkw-agent-control__task p {
+  overflow-wrap: anywhere;
+}
+.afkw-agent-control__mode {
+  background: #e8f4f1;
+  color: #006b5a;
+}
+.afkw-agent-control__task summary {
+  color: #007c68;
+  cursor: pointer;
+  font-weight: 700;
+}
+.afkw-agent-control__prompt {
+  border-left: 3px solid #00a184;
+  margin: 10px 0 0;
+  padding-left: 10px;
+  color: #3c434a;
+  font-size: 12px;
+}
+.afkw-agent-control__footer {
+  align-items: center;
+  margin-top: 18px;
+}
+.afkw-agent-control__footer p {
+  margin: 0;
+  color: #50575e;
+  font-size: 12px;
+}
+.afkw-agent-control__cta {
+  white-space: nowrap;
+}
+
+@media (max-width: 782px) {
+  .afkw-settings-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .afkw-settings-row > [class*="col-xs-"] {
+    width: 100%;
+    max-width: none;
+    flex-basis: auto;
+  }
+
+  .afkw-settings-row .afkw-label {
+    margin-top: 0 !important;
+  }
+
+  .afkw-sync-pro {
+    padding: 20px;
+  }
+
+  .afkw-agent-control__header,
+  .afkw-agent-control__footer {
+    flex-direction: column;
+  }
+
+  .afkw-agent-control__tasks {
+    grid-template-columns: 1fr;
+  }
+
+  .afkw-agent-control__cta {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: normal;
+  }
+}
