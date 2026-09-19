@@ -16470,18 +16470,17 @@
              * the user from messing up with some of the sensitive
              * data stored for the module as a JSON in the database.
              *
-             * I used the same suggested hack by the theme review team.
-             * For more details, look at the function `Base64UrlDecode()`
-             * in `./sdk/FreemiusBase.php`.
-             *
-             * @todo   Remove this hack once the base64 error is removed from the Theme Check.
+             * Pagup hardening (WordPress.org automated security review): the upstream SDK
+             * rebuilt the callable name from two string fragments, and said in this very
+             * comment that it did so to keep Theme Check quiet. Hiding the name of an
+             * executed function from source review is worse than the warning it avoided,
+             * and this product is a plugin, never a theme, so base64_encode() is called
+             * literally.
              *
              * @author Vova Feldman (@svovaf)
              * @since  1.2.2
              */
-            $fn = 'base64' . '_encode';
-
-            return $fn( $str );
+            return base64_encode( $str );
         }
 
         static function _decrypt( $str ) {
@@ -16494,18 +16493,16 @@
              * the user from messing up with some of the sensitive
              * data stored for the module as a JSON in the database.
              *
-             * I used the same suggested hack by the theme review team.
-             * For more details, look at the function `Base64UrlDecode()`
-             * in `./sdk/FreemiusBase.php`.
-             *
-             * @todo   Remove this hack once the base64 error is removed from the Theme Check.
+             * Pagup hardening (WordPress.org automated security review): this is the exact
+             * line WordPress.org reported. The upstream SDK rebuilt the callable name from
+             * two string fragments to keep Theme Check quiet. Hiding the name of an executed
+             * function from source review is worse than the warning it avoided, and this
+             * product is a plugin, never a theme, so base64_decode() is called literally.
              *
              * @author Vova Feldman (@svovaf)
              * @since  1.2.2
              */
-            $fn = 'base64' . '_decode';
-
-            return $fn( $str );
+            return base64_decode( $str );
         }
 
         /**
@@ -24859,16 +24856,14 @@
 
                 $response = FS_Api::remote_request( $url, $request );
 
-                if (
-                    'https://' === substr( $url, 0, 8 ) &&
-                    FS_Api::is_ssl_error_response( $response )
-                ) {
-                    // Failed due to old version of cURL or Open SSL (SSLv3 is not supported by CloudFlare).
-                    $url = 'http://' . substr( $url, 8 );
-
-                    $request['timeout'] = 15;
-                    $response           = FS_Api::remote_request( $url, $request );
-                }
+                /**
+                 * Pagup hardening (WordPress.org automated security review).
+                 *
+                 * A TLS error used to rewrite the URL to http:// and replay the same POST
+                 * in clear text, which handed the request body, install and licence
+                 * identifiers included, to whoever answers on the network path. The error
+                 * is returned to the caller instead.
+                 */
 
                 if ( false !== $cache_key ) {
                     set_transient(

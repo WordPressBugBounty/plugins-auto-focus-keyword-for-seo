@@ -4,7 +4,7 @@
 * Plugin Name: Auto Focus Keyword for SEO
 * Description: This plugin will assign Focus Keywords to all your pages (on the backend) based on post titles, for websites using Yoast SEO, Rank Math, SEOPress, and All in One SEO.
 * Author: Pagup
-* Version: 1.0.10
+* Version: 1.0.11
 * Author URI: https://pagup.com/
 * Text Domain: auto-focus-keyword-for-seo
 * Domain Path: /languages/
@@ -24,6 +24,11 @@ if ( function_exists( 'afkw__fs' ) ) {
         }
         if ( !defined( 'AFKW_PLUGIN_DIR' ) ) {
             define( 'AFKW_PLUGIN_DIR', plugins_url( '', __FILE__ ) );
+        }
+        // Verify the TLS certificate of the Freemius API even when another plugin ships an
+        // SDK copy that still defaults this constant to false.
+        if ( !defined( 'FS_SDK__SSLVERIFY' ) ) {
+            define( 'FS_SDK__SSLVERIFY', true );
         }
         require_once __DIR__ . '/vendor/autoload.php';
         // Create a helper function for easy SDK access.

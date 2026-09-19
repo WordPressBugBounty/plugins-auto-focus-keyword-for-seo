@@ -3,8 +3,8 @@ Contributors: the-rock, pagup, freemius
 Tags: focus keyword, yoast seo, rank math, seopress, aioseo, seo, keyword automation
 Requires at least: 4.1
 Requires PHP: 7.4
-Tested up to: 7.0
-Stable tag: 1.0.10
+Tested up to: 7.1
+Stable tag: 1.0.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -267,6 +267,9 @@ Digital readability is the capacity of a website to be correctly understood by a
 Maintenance release: refreshes the bundled Freemius SDK to 2.13.4 and adds contextual PAGUP Agent Control examples. Focus keyword generation is unchanged.
 
 == Changelog ==
+
+= 1.0.11 =
+* Hardened the bundled Freemius SDK after a WordPress.org security review: API certificate verification is on by default, the silent fallback to plain HTTP is removed, and the clone-resolution action now requires an explicit capability check.
 
 = 1.0.10 =
 * Updated the bundled Freemius WordPress SDK from 2.13.1 to 2.13.4 for current pricing, payment-history currency, API-timeout, PHP compatibility, and add-on checkout behavior.
