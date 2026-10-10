@@ -1,11 +1,11 @@
 jQuery(document).ready(function () {
+  // Localized editor values are absent on onboarding and other admin screens.
+  if (typeof php_vars !== "object" || php_vars === null) return;
   const data = {
     disable_afk: php_vars.disable_afk === "1",
     disable_auto_sync: php_vars.disable_auto_sync === "1",
     blacklist: php_vars.blacklist === "1",
   };
-
-  console.log(data);
 
   if (!data.disable_afk && !data.disable_auto_sync && !data.blacklist) {
     jQuery(

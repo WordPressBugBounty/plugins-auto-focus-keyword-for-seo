@@ -4,7 +4,7 @@ Tags: focus keyword, yoast seo, rank math, seopress, aioseo, seo, keyword automa
 Requires at least: 4.1
 Requires PHP: 7.4
 Tested up to: 7.1
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -267,6 +267,10 @@ Digital readability is the capacity of a website to be correctly understood by a
 Maintenance release: refreshes the bundled Freemius SDK to 2.13.4 and adds contextual PAGUP Agent Control examples. Focus keyword generation is unchanged.
 
 == Changelog ==
+
+= 1.0.12 =
+* Updated Freemius SDK to the latest version
+* Fixed editor script initialization on unrelated administration screens.
 
 = 1.0.11 =
 * Hardened the bundled Freemius SDK after a WordPress.org security review: API certificate verification is on by default, the silent fallback to plain HTTP is removed, and the clone-resolution action now requires an explicit capability check.
